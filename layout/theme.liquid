@@ -1,1 +1,29 @@
-{{ content_for_layout }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }}</title>
+    
+    <!-- Shopify метатеги -->
+    {{ content_for_header }}
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
+</head>
+<body>
+    <!-- HEADER (шапка) -->
+    {% section 'header' %}
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <main role="main">
+        {{ content_for_layout }}
+    </main>
+
+    <!-- FOOTER (подвал) -->
+    {% section 'footer' %}
+
+    <!-- Скрипты -->
+    <script src="{{ 'theme.js' | asset_url }}"></script>
+</body>
+</html>
